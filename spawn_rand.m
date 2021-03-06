@@ -1,4 +1,6 @@
-N_PARTICLES = 50;
+DIMENSIONS = 3;
+
+N_PARTICLES = 500;
 SIZE = 1;
 SPAWN_VELO = 0;
 
@@ -8,11 +10,13 @@ mass = zeros(N_PARTICLES, 1);
 
 for k = 1 : N_PARTICLES
   location(k, :) = (rand(1, 3) - .5) * SIZE;
-  % location(k, 3) = 0;
+  if DIMENSIONS == 2
+    location(k, 3) = 0;
+  end
   velocity(k, :) = (rand(1, 3) - .5) * SPAWN_VELO;
   velocity(k, 3) = 0;
   if mod(k, 2) == 0
-    mass(k, :) = 1;
+    mass(k, :) = -1;
   else
     mass(k, :) = 1;
   end

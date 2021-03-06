@@ -1,11 +1,16 @@
 hold off;
-% plot(0);
-% hold on;
 
-scatter3(location(positives, 1), location(positives, 2), location(positives, 3), (mass(positives)) .^ .33 * 300, 'b.');
-hold on;
-% scatter(location(positives, 1), location(positives, 2), sqrt(mass(positives)) * 300, 'b.');
-scatter(location(negatives, 1), location(negatives, 2), sqrt(-mass(negatives)) * 300, 'r.');
+if DIMENSIONS == 2
+  plot(0);
+  hold on;
+  scatter(location(positives, 1), location(positives, 2), sqrt(mass(positives)) * 300, 'b.');
+  scatter(location(negatives, 1), location(negatives, 2), sqrt(-mass(negatives)) * 300, 'r.');
+else
+  scatter3(location(positives, 1), location(positives, 2), location(positives, 3), (mass(positives)) .^ .33 * 300, 'b.');
+  hold on;
+  scatter3(location(negatives, 1), location(negatives, 2), location(negatives, 3), (-mass(negatives)) .^ .33 * 300, 'r.');
+end
+
 
 rectangle('Position', [-RENDER_REF_RADIUS, -RENDER_REF_RADIUS, RENDER_REF_LEN, RENDER_REF_LEN]);
 
@@ -27,5 +32,7 @@ grid on;
 
 title(sprintf("t = %f", t));
 
-view(t * ROTATE_SPEED, 20);
+if DIMENSIONS == 3
+  view(t * ROTATE_SPEED, 20);
+end
 drawnow();
