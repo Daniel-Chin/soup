@@ -13,7 +13,7 @@ force = force_G * G;
 velocity = velocity + (force ./ mass) * dt;
 location = location + velocity * dt;
 
-dt_multiplier = min_distance_3 ^ .5 * 30;
+dt_multiplier = min_distance_3 ^ .5;
 
 if mod(step_i , 16) == 0
   checkMerge();

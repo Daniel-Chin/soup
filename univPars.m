@@ -1,5 +1,5 @@
 % Universe parameters
 G = 1;
-DT = .003;
+DT = .06;
 
-MERGE_THRESHOLD = .001;
+MERGE_THRESHOLD = .02;
