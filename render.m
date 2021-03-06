@@ -3,12 +3,12 @@ hold off;
 if DIMENSIONS == 2
   plot(0);
   hold on;
-  scatter(location(positives, 1), location(positives, 2), sqrt(mass(positives)) * 300, 'b.');
-  scatter(location(negatives, 1), location(negatives, 2), sqrt(-mass(negatives)) * 300, 'r.');
+  scatter(location(positives, 1), location(positives, 2), sqrt(mass(positives)) * SCATTER_SIZE, 'b.');
+  scatter(location(negatives, 1), location(negatives, 2), sqrt(-mass(negatives)) * SCATTER_SIZE, 'r.');
 else
-  scatter3(location(positives, 1), location(positives, 2), location(positives, 3), (mass(positives)) .^ .33 * 300, 'b.');
+  scatter3(location(positives, 1), location(positives, 2), location(positives, 3), (mass(positives)) .^ .33 * SCATTER_SIZE, 'b.');
   hold on;
-  scatter3(location(negatives, 1), location(negatives, 2), location(negatives, 3), (-mass(negatives)) .^ .33 * 300, 'r.');
+  scatter3(location(negatives, 1), location(negatives, 2), location(negatives, 3), (-mass(negatives)) .^ .33 * SCATTER_SIZE, 'r.');
 end
 
 
