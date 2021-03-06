@@ -18,4 +18,5 @@ dt_multiplier = min_distance_3 ^ .5 * 30;
 if mod(step_i , 16) == 0
   checkMerge();
 end
+
 step_i = step_i + 1;
