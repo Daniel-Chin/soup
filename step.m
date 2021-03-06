@@ -22,6 +22,9 @@ location = location + velocity * dt;
 
 if mod(step_i , 16) == 0
   checkMerge();
+  while to_break
+    checkMerge();
+  end
 end
 
 step_i = step_i + 1;
