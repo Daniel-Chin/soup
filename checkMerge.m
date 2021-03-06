@@ -4,7 +4,8 @@ for k = 1 : N_PARTICLES
     if k == kk
       continue;
     end
-    if norm(location(k, :) - location(kk, :)) < MERGE_THRESHOLD
+    relevance = norm(location(k, :) - location(kk, :)) / norm(location(k, :) + location(kk, :));
+    if relevance < MERGE_THRESHOLD
       disp("merge");
       combined_mass = mass(k) + mass(kk);
       if combined_mass == 0
