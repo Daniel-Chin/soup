@@ -1,0 +1,2 @@
+pause
+rm ./output/*
