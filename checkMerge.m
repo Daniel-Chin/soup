@@ -1,6 +1,6 @@
 to_break = 0;
 for k = 1 : N_PARTICLES
-  relevance = vecnorm((location(k, :) - location)') ./ max(1, vecnorm((location(k, :) + location)') .^ 1.6);
+  relevance = vecnorm((location(k, :) - location)') ./ max(1, vecnorm((location(k, :) + location)') .^ 1);
   for kk = find(relevance < MERGE_THRESHOLD)
     if k == kk
       continue;
