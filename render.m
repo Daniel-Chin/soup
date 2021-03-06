@@ -25,14 +25,20 @@ y_mid = (y_min + y_max) * .5;
 z_mid = (z_min + z_max) * .5;
 render_radius = max([x_max - x_min, y_max - y_min, z_max - z_min]) * .55;
 render_radius = max(RENDER_REF_RADIUS, render_radius);
+z_render_radius = render_radius;
+if DIMENSIONS == 3
+  view_angle = mod(t * ROTATE_SPEED, 360);
+  view_radian = (view_angle + 45) / 180 * pi;
+  render_radius = render_radius / max(abs(cos(view_radian)), abs(sin(view_radian)));
+end
 axis([x_mid - render_radius, x_mid + render_radius, ...
       y_mid - render_radius, y_mid + render_radius, ...
-      z_mid - render_radius, z_mid + render_radius]);
+      z_mid - z_render_radius, z_mid + z_render_radius]);
 grid on;
 
 title(sprintf("t = %f", t));
 
 if DIMENSIONS == 3
-  view(t * ROTATE_SPEED, 20);
+  view(view_angle, 20);
 end
 drawnow();
