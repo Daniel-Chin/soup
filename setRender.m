@@ -1,3 +1,5 @@
+ROTATE_SPEED = 1000;
+
 % FPS = 5000;
 % DO_SAVE = 1;
 
