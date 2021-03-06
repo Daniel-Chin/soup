@@ -1,6 +1,6 @@
-DIMENSIONS = 2;
+% DIMENSIONS = 3;
 
-N = 7;
+% N = 9;
 SIZE = 1;
 
 N_PARTICLES = N ^ DIMENSIONS;
@@ -13,12 +13,12 @@ phase = -1;
 for k = 1 : N_PARTICLES
   kk = k - 1;
   pos = mod(kk, N);
-  location(k, 1) = SIZE * (pos / N - .5);
+  location(k, 2) = SIZE * ((pos+.5) / N - .5);
   kk = (kk - pos) / N;
   pos = mod(kk, N);
-  location(k, 2) = SIZE * (pos / N - .5);
+  location(k, 1) = SIZE * ((pos+.5) / N - .5);
   pos = (kk - pos) / N;
-  location(k, 3) = SIZE * (pos / N - .5);
+  location(k, 3) = SIZE * ((pos+.5) / N - .5);
   mass(k, :) = phase;
   phase = - phase;
 end

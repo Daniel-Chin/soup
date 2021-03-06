@@ -11,8 +11,8 @@ for k = 1 : N_PARTICLES
 end
 force = force_G * G;
 
-% dt_multiplier = min_distance_3 ^ .5;
-dt_multiplier = 1 / max(vecnorm(force'));
+dt_multiplier = min_distance_3 ^ .5;
+% dt_multiplier = 1 / max(vecnorm(force'));
 % dt_multiplier = min_distance_3;
 % dt_multiplier = min_distance_3 ^ .3;
 
