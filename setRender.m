@@ -1,9 +1,13 @@
 ROTATE_SPEED = 200;
+% save_oversample = 1;
+save_oversample = 0;
 
-% FPS = 5000;
+% FPS = 1000;
+% FPS = 400;
 % DO_SAVE = 1;
 
-FPS = 400;
+FPS = 100;
+% FPS = 0;
 DO_SAVE = 0;
 
 SPF = 1 / FPS;

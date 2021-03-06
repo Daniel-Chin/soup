@@ -8,7 +8,7 @@ render();
 while 1
   step();
   render();
-  if render_elapsed > SPF
+  if render_elapsed > SPF || save_oversample
     render_elapsed = 0;
     saveRender();
   end
