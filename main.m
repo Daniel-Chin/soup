@@ -6,7 +6,6 @@ setRender();
 
 render();
 while 1
-  dt = min(DT * dt_multiplier, SPF);
   step();
   render();
   if render_elapsed > SPF
