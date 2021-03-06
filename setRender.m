@@ -1,9 +1,9 @@
-ROTATE_SPEED = 1000;
+ROTATE_SPEED = 200;
 
 % FPS = 5000;
 % DO_SAVE = 1;
 
-FPS = .5;
+FPS = 400;
 DO_SAVE = 0;
 
 SPF = 1 / FPS;
