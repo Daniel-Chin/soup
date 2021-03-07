@@ -1,5 +1,7 @@
 close all; 
 
+T_MAX = 1.5;
+
 for DIMENSIONS = [2, 3]
   for N = [3 4 5 6 7 8 9 10 11 12 13 14 17 23 27 33 69]
     spawn_matrix();
@@ -9,10 +11,10 @@ for DIMENSIONS = [2, 3]
     setRender();
     OUTPUT_DIR = sprintf('D:/soup/output_%dD%d_dyna/', DIMENSIONS, N);
     mkdir(OUTPUT_DIR);
-    OUTPUT_PATH = OUTPUT_DIR + '%d.png';
+    OUTPUT_PATH = OUTPUT_DIR + "%d.png";
 
     render();
-    while 1
+    while t < T_MAX
       step();
       render();
       if render_elapsed > SPF || save_oversample
