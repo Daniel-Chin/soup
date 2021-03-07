@@ -2,7 +2,7 @@ ROTATE_SPEED = 200;
 save_oversample = 1;
 % save_oversample = 0;
 
-FPS = 1000;
+FPS = 200;
 % FPS = 400;
 DO_SAVE = 1;
 
